@@ -1,793 +1,997 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mohamed Yousry Al-Ansari - Software Engineer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --text-color: #2c3e50;
-            --light-bg: #f8f9fa;
-            --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --border-radius: 12px;
-        }
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --text-color: #2c3e50;
+        --light-bg: #f8f9fa;
+        --white: #ffffff;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --border-radius: 12px;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
 
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .profile-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: var(--white);
+        padding: 40px 30px;
+        text-align: center;
+        position: relative;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,100 1000,0"/></svg>');
+        background-size: cover;
+      }
+
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: var(--white);
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        color: var(--primary-color);
+        border: 4px solid var(--white);
+        position: relative;
+        z-index: 1;
+      }
+
+      .name {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .title {
+        font-size: 1.3rem;
+        opacity: 0.9;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--white);
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-2px);
+        color: #fff;
+      }
+
+      .download-cv-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--accent-color);
+        color: var(--white);
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        margin-top: 15px;
+      }
+
+      .download-cv-btn:hover {
+        background: #c0392b;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(231, 76, 60, 0.4);
+        color: var(--white);
+      }
+
+      .download-cv-btn i {
+        font-size: 1.2rem;
+      }
+
+      .section {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        padding: 30px;
+        margin-bottom: 20px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .section:hover {
+        transform: translateY(-2px);
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid var(--secondary-color);
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--accent-color);
+      }
+
+      .summary-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .skill-category {
+        padding: 20px;
+        background: var(--light-bg);
+        border-radius: 8px;
+        border-left: 4px solid var(--secondary-color);
+      }
+
+      .skill-category h4 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .skill-tag {
+        background: var(--secondary-color);
+        color: var(--white);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        transition: background 0.3s ease;
+      }
+
+      .skill-tag:hover {
+        background: var(--primary-color);
+      }
+
+      .experience-item,
+      .project-item {
+        margin-bottom: 30px;
+        padding: 20px;
+        background: var(--light-bg);
+        border-radius: 8px;
+        position: relative;
+      }
+
+      .experience-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--secondary-color);
+        border-radius: 2px;
+      }
+
+      .job-header,
+      .project-header {
+        margin-bottom: 15px;
+      }
+
+      .job-title,
+      .project-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+
+      .company,
+      .tech-stack {
+        color: var(--secondary-color);
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .duration,
+      .project-date {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .achievements {
+        list-style: none;
+        margin-top: 15px;
+      }
+
+      .achievements li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 8px;
+        color: #555;
+      }
+
+      .achievements li::before {
+        content: "▶";
+        position: absolute;
+        left: 0;
+        color: var(--secondary-color);
+      }
+
+      .project-links {
+        margin-top: 15px;
+        display: flex;
+        gap: 15px;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .project-link:hover {
+        color: var(--accent-color);
+      }
+
+      .education-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+        background: var(--light-bg);
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border-left: 4px solid var(--secondary-color);
+      }
+
+      .education-details h4 {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .institution {
+        color: var(--secondary-color);
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .grade {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .leadership-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .leadership-item {
+        background: var(--light-bg);
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent-color);
+      }
+
+      .leadership-item strong {
+        color: var(--primary-color);
+      }
+
+      .certifications-list {
+        background: var(--light-bg);
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid var(--secondary-color);
+      }
+
+      .certifications-list li {
+        list-style: none;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .certifications-list li:last-child {
+        border-bottom: none;
+      }
+
+      @media (max-width: 768px) {
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .profile-card {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            margin-bottom: 20px;
+          padding: 10px;
         }
 
         .header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-            padding: 40px 30px;
-            text-align: center;
-            position: relative;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,100 1000,0"/></svg>');
-            background-size: cover;
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: var(--white);
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: var(--primary-color);
-            border: 4px solid var(--white);
-            position: relative;
-            z-index: 1;
+          padding: 30px 20px;
         }
 
         .name {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .title {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
+          font-size: 2rem;
         }
 
         .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--white);
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-2px);
-            color: #fff;
+          flex-direction: column;
+          align-items: center;
         }
 
         .section {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-2px);
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--secondary-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-        }
-
-        .summary-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
+          padding: 20px;
         }
 
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            padding: 20px;
-            background: var(--light-bg);
-            border-radius: 8px;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .skill-category h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            transition: background 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: var(--primary-color);
-        }
-
-        .experience-item, .project-item {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: var(--light-bg);
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--secondary-color);
-            border-radius: 2px;
-        }
-
-        .job-header, .project-header {
-            margin-bottom: 15px;
-        }
-
-        .job-title, .project-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .company, .tech-stack {
-            color: var(--secondary-color);
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-
-        .duration, .project-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .achievements {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .achievements li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        .achievements li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-        }
-
-        .project-links {
-            margin-top: 15px;
-            display: flex;
-            gap: 15px;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: var(--accent-color);
+          grid-template-columns: 1fr;
         }
 
         .education-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 20px;
-            background: var(--light-bg);
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--secondary-color);
+          flex-direction: column;
         }
-
-        .education-details h4 {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+        .download-cv-btn {
+          padding: 10px 20px;
+          font-size: 1rem;
         }
+      }
 
-        .institution {
-            color: var(--secondary-color);
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
+      .scroll-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--secondary-color);
+        color: var(--white);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+      }
 
-        .grade {
-            color: #666;
-            font-size: 0.9rem;
-        }
+      .scroll-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
 
-        .leadership-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .leadership-item {
-            background: var(--light-bg);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
-        }
-
-        .leadership-item strong {
-            color: var(--primary-color);
-        }
-
-        .certifications-list {
-            background: var(--light-bg);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .certifications-list li {
-            list-style: none;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .certifications-list li:last-child {
-            border-bottom: none;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-
-            .header {
-                padding: 30px 20px;
-            }
-
-            .name {
-                font-size: 2rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section {
-                padding: 20px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .education-item {
-                flex-direction: column;
-            }
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--secondary-color);
-            color: var(--white);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            background: var(--primary-color);
-            transform: translateY(-2px);
-        }
+      .scroll-top:hover {
+        background: var(--primary-color);
+        transform: translateY(-2px);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <!-- Header -->
-        <div class="profile-card">
-            <div class="header">
-                <div class="profile-img">
-                    <i class="fas fa-user"> </i>
-                </div>
-                <h1 class="name">Mohamed Yousry Al-Ansari</h1>
-                <p class="title">Software Engineer</p>
-                <div class="contact-info">
-                    <a href="tel:+201223513990" class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+201223513990</span>
-                    </a>
-                    <a href="mailto:mohamed.alansari356@gmail.com" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>mohamed.alansari356@gmail.com</span>
-                    </a>
-                    <a href="https://linkedin.com/in/alansari356" class="contact-item" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/ansari356" class="contact-item" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Cairo & Alexandria, Egypt</span>
-                    </div>
-                </div>
+      <!-- Header -->
+      <div class="profile-card">
+        <div class="header">
+          <div class="profile-img">
+            <i class="fas fa-user"> </i>
+          </div>
+          <h1 class="name">Mohamed Yousry Al-Ansari</h1>
+          <p class="title">Software Engineer</p>
+          <div class="contact-info">
+            <a href="tel:+201223513990" class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+201223513990</span>
+            </a>
+            <a href="mailto:mohamed.alansari356@gmail.com" class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>mohamed.alansari356@gmail.com</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/alansari356"
+              class="contact-item"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/ansari356"
+              class="contact-item"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Cairo & Alexandria, Egypt</span>
             </div>
+          </div>
+          <a
+            href="./Mohamed Yousry Al-Ansari Resume.pdf"
+            class="download-cv-btn"
+            id="downloadCV"
+          >
+            <i class="fas fa-download"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Professional Summary -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-user-tie"></i> Professional Summary
+        </h2>
+        <p class="summary-text">
+          Full-Stack Software Engineer with 1+ years of experience in web
+          development using React.js, Node.js, Django, PostgreSQL, and MongoDB.
+          Proven track record in building scalable e-commerce applications and
+          delivering comprehensive training to 150+ students. Expertise in
+          JavaScript, Python, and modern web technologies with strong
+          problem-solving and leadership skills. Seeking a challenging software
+          engineering role in a growth-focused company where I can apply both my
+          technical and soft skills.
+        </p>
+      </div>
+
+      <!-- Skills -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-cogs"></i> Skills & Core Competencies
+        </h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Programming Languages</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Frontend Technologies</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Redux Toolkit</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">Sass</span>
+              <span class="skill-tag">Bootstrap</span>
+              <span class="skill-tag">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Backend Frameworks</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express.js</span>
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">JWT</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Databases</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Tools & Technologies</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Vercel</span>
+              <span class="skill-tag">CI/CD pipelines</span>
+              <span class="skill-tag">JIRA</span>
+              <span class="skill-tag">Trello</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Soft Skills</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Communication</span>
+              <span class="skill-tag">Leadership</span>
+              <span class="skill-tag">Adaptability</span>
+              <span class="skill-tag">Problem-Solving</span>
+              <span class="skill-tag">Critical Thinking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Experience -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-briefcase"></i> Professional Experience
+        </h2>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Freelance Software Developer</h3>
+            <p class="company">Self-Employed • Alexandria, Egypt — Remote</p>
+            <p class="duration">June 2023 – Present</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Engineered custom web applications and e-commerce solutions for
+              10+ clients across various industries
+            </li>
+            <li>
+              Built responsive websites and web applications using React.js,
+              Node.js, MongoDB, and modern web technologies
+            </li>
+            <li>
+              Collaborated with clients to gather requirements, design
+              solutions, and deliver projects within specified timelines
+            </li>
+          </ul>
         </div>
 
-        <!-- Professional Summary -->
-        <div class="section">
-            <h2 class="section-title">
-                <i class="fas fa-user-tie"></i> Professional Summary
-            </h2>
-            <p class="summary-text">
-                Full-Stack Software Engineer with 1+ years of experience in web development using React.js, Node.js, Django, PostgreSQL, and MongoDB. Proven track record in building scalable e-commerce applications and delivering comprehensive training to 150+ students. Expertise in JavaScript, Python, and modern web technologies with strong problem-solving and leadership skills. Seeking a challenging software engineering role in a growth-focused company where I can apply both my technical and soft skills.
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Online Instructor</h3>
+            <p class="company">Almentor (DECI) • Cairo, Egypt — Part-Time</p>
+            <p class="duration">June 2024 – December 2024</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Delivered comprehensive training to 150+ students in web
+              development, Python programming, and artificial intelligence
+            </li>
+            <li>
+              Conducted 120+ interactive and engaging lectures covering Python,
+              JavaScript, Scratch, and Computer Systems
+            </li>
+            <li>
+              Designed curriculum and learning materials, showcasing leadership
+              and adaptability across diverse technical topics
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Backend Development Trainee</h3>
+            <p class="company">Sprints Training • Alexandria, Egypt</p>
+            <p class="duration">June 2022 – October 2022</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Developed proficiency in MongoDB, Express.js, and Node.js for
+              full-stack web applications
+            </li>
+            <li>
+              Implemented RESTful APIs and optimized database design patterns
+              for scalable backend systems
+            </li>
+            <li>
+              Utilized Git, Postman, and project management tools including Jira
+              and Trello, collaborating in Agile teams
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Software Engineering Trainee</h3>
+            <p class="company">Appsoft Co. • Alexandria, Egypt</p>
+            <p class="duration">June 2021 – October 2021</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Designed and developed a Point of Sale (POS) system for inventory
+              management and customer data
+            </li>
+            <li>
+              Implemented invoice generation and database management features
+              for business operations
+            </li>
+            <li>
+              Enhanced skills in database design, teamwork, and efficient coding
+              practices through mentorship
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Key Projects -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-project-diagram"></i> Key Projects
+        </h2>
+
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">E-Commerce Website</h3>
+            <p class="tech-stack">
+              Node.js, Express.js, MongoDB, JWT, Stripe API
             </p>
+            <p class="project-date">June 2024</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Developed full-stack e-commerce application with robust backend
+              using Node.js, Express.js, and MongoDB
+            </li>
+            <li>
+              Implemented JWT-based authentication, role-based authorization,
+              and secure payment processing with Stripe
+            </li>
+            <li>
+              Integrated Cloudinary for image management and Nodemailer for
+              automated email notifications
+            </li>
+            <li>
+              Deployed scalable solution on Vercel with data protection using
+              bcrypt and comprehensive error handling
+            </li>
+          </ul>
+          <div class="project-links">
+            <a
+              href="https://github.com/ansari356/ECommerce_Nodejs_Project"
+              class="project-link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
         </div>
 
-        <!-- Skills -->
-        <div class="section">
-            <h2 class="section-title">
-                <i class="fas fa-cogs"></i> Skills & Core Competencies
-            </h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Programming Languages</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Frontend Technologies</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">Redux Toolkit</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">Sass</span>
-                        <span class="skill-tag">Bootstrap</span>
-                        <span class="skill-tag">Tailwind CSS</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Backend Frameworks</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express.js</span>
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">JWT</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Databases</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">SQL</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Tools & Technologies</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">Vercel</span>
-                        <span class="skill-tag">CI/CD pipelines</span>
-                        <span class="skill-tag">JIRA</span>
-                        <span class="skill-tag">Trello</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Soft Skills</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Communication</span>
-                        <span class="skill-tag">Leadership</span>
-                        <span class="skill-tag">Adaptability</span>
-                        <span class="skill-tag">Problem-Solving</span>
-                        <span class="skill-tag">Critical Thinking</span>
-                    </div>
-                </div>
-            </div>
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Movie & TV Browser Application</h3>
+            <p class="tech-stack">
+              React.js, Redux Toolkit, TMDb API, Sass, Bootstrap
+            </p>
+            <p class="project-date">May 2025</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Built a dynamic movie and TV show browsing application with
+              React.js and Redux Toolkit for state management
+            </li>
+            <li>
+              Integrated TMDb API for fetching real-time movie data,
+              recommendations, and user reviews
+            </li>
+            <li>
+              Implemented multilingual support and RTL layout for enhanced user
+              accessibility
+            </li>
+            <li>
+              Enhanced user experience with animated transitions using Lottie
+              and Swiper.js components
+            </li>
+          </ul>
+          <div class="project-links">
+            <a
+              href="https://github.com/ansari356/Movie_App_Reactjs"
+              class="project-link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
         </div>
 
-        <!-- Professional Experience -->
-        <div class="section">
-            <h2 class="section-title">
-                <i class="fas fa-briefcase"></i> Professional Experience
-            </h2>
-            
-            <div class="experience-item">
-                <div class="job-header">
-                    <h3 class="job-title">Freelance Software Developer</h3>
-                    <p class="company">Self-Employed • Alexandria, Egypt — Remote</p>
-                    <p class="duration">June 2023 – Present</p>
-                </div>
-                <ul class="achievements">
-                    <li>Engineered custom web applications and e-commerce solutions for 10+ clients across various industries</li>
-                    <li>Built responsive websites and web applications using React.js, Node.js, MongoDB, and modern web technologies</li>
-                    <li>Collaborated with clients to gather requirements, design solutions, and deliver projects within specified timelines</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <h3 class="job-title">Online Instructor</h3>
-                    <p class="company">Almentor (DECI) • Cairo, Egypt — Part-Time</p>
-                    <p class="duration">June 2024 – December 2024</p>
-                </div>
-                <ul class="achievements">
-                    <li>Delivered comprehensive training to 150+ students in web development, Python programming, and artificial intelligence</li>
-                    <li>Conducted 120+ interactive and engaging lectures covering Python, JavaScript, Scratch, and Computer Systems</li>
-                    <li>Designed curriculum and learning materials, showcasing leadership and adaptability across diverse technical topics</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <h3 class="job-title">Backend Development Trainee</h3>
-                    <p class="company">Sprints Training • Alexandria, Egypt</p>
-                    <p class="duration">June 2022 – October 2022</p>
-                </div>
-                <ul class="achievements">
-                    <li>Developed proficiency in MongoDB, Express.js, and Node.js for full-stack web applications</li>
-                    <li>Implemented RESTful APIs and optimized database design patterns for scalable backend systems</li>
-                    <li>Utilized Git, Postman, and project management tools including Jira and Trello, collaborating in Agile teams</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <h3 class="job-title">Software Engineering Trainee</h3>
-                    <p class="company">Appsoft Co. • Alexandria, Egypt</p>
-                    <p class="duration">June 2021 – October 2021</p>
-                </div>
-                <ul class="achievements">
-                    <li>Designed and developed a Point of Sale (POS) system for inventory management and customer data</li>
-                    <li>Implemented invoice generation and database management features for business operations</li>
-                    <li>Enhanced skills in database design, teamwork, and efficient coding practices through mentorship</li>
-                </ul>
-            </div>
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Full-Stack Client Management System</h3>
+            <p class="tech-stack">
+              React.js, Node.js, PostgreSQL, Tailwind CSS
+            </p>
+            <p class="project-date">May 2025</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Developed complete client management system with React.js frontend
+              and Node.js RESTful API backend
+            </li>
+            <li>
+              Connected PostgreSQL database with secure CRUD operations and
+              advanced search functionality
+            </li>
+            <li>
+              Implemented responsive design using Tailwind CSS for optimal user
+              experience across devices
+            </li>
+          </ul>
+          <div class="project-links">
+            <a
+              href="https://github.com/ansari356/Full_Stack_CRUD_App"
+              class="project-link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
         </div>
 
-        <!-- Key Projects -->
-        <div class="section">
-            <h2 class="section-title">
-                <i class="fas fa-project-diagram"></i> Key Projects
-            </h2>
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Weather Application</h3>
+            <p class="tech-stack">
+              HTML5, CSS3, JavaScript, Bootstrap, Weather API
+            </p>
+            <p class="project-date">April 2025</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Created a weather application with user authentication providing
+              real-time weather data worldwide
+            </li>
+            <li>
+              Implemented responsive UI with light/dark theme toggle and
+              interactive weather cards
+            </li>
+            <li>
+              Built a user account management system with persistent data
+              storage
+            </li>
+          </ul>
+          <div class="project-links">
+            <a
+              href="https://ansari356.github.io/Weather_App"
+              class="project-link"
+              target="_blank"
+            >
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
 
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">E-Commerce Website</h3>
-                    <p class="tech-stack">Node.js, Express.js, MongoDB, JWT, Stripe API</p>
-                    <p class="project-date">June 2024</p>
-                </div>
-                <ul class="achievements">
-                    <li>Developed full-stack e-commerce application with robust backend using Node.js, Express.js, and MongoDB</li>
-                    <li>Implemented JWT-based authentication, role-based authorization, and secure payment processing with Stripe</li>
-                    <li>Integrated Cloudinary for image management and Nodemailer for automated email notifications</li>
-                    <li>Deployed scalable solution on Vercel with data protection using bcrypt and comprehensive error handling</li>
-                </ul>
-                <div class="project-links">
-                    <a href="https://github.com/ansari356/ECommerce_Nodejs_Project" class="project-link" target="_blank">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                </div>
-            </div>
+      <!-- Education -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-graduation-cap"></i> Education
+        </h2>
 
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">Movie & TV Browser Application</h3>
-                    <p class="tech-stack">React.js, Redux Toolkit, TMDb API, Sass, Bootstrap</p>
-                    <p class="project-date">May 2025</p>
-                </div>
-                <ul class="achievements">
-                    <li>Built a dynamic movie and TV show browsing application with React.js and Redux Toolkit for state management</li>
-                    <li>Integrated TMDb API for fetching real-time movie data, recommendations, and user reviews</li>
-                    <li>Implemented multilingual support and RTL layout for enhanced user accessibility</li>
-                    <li>Enhanced user experience with animated transitions using Lottie and Swiper.js components</li>
-                </ul>
-                <div class="project-links">
-                    <a href="https://github.com/ansari356/Movie_App_Reactjs" class="project-link" target="_blank">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">Full-Stack Client Management System</h3>
-                    <p class="tech-stack">React.js, Node.js, PostgreSQL, Tailwind CSS</p>
-                    <p class="project-date">May 2025</p>
-                </div>
-                <ul class="achievements">
-                    <li>Developed complete client management system with React.js frontend and Node.js RESTful API backend</li>
-                    <li>Connected PostgreSQL database with secure CRUD operations and advanced search functionality</li>
-                    <li>Implemented responsive design using Tailwind CSS for optimal user experience across devices</li>
-                </ul>
-                <div class="project-links">
-                    <a href="https://github.com/ansari356/Full_Stack_CRUD_App" class="project-link" target="_blank">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-header">
-                    <h3 class="project-title">Weather Application</h3>
-                    <p class="tech-stack">HTML5, CSS3, JavaScript, Bootstrap, Weather API</p>
-                    <p class="project-date">April 2025</p>
-                </div>
-                <ul class="achievements">
-                    <li>Created a weather application with user authentication providing real-time weather data worldwide</li>
-                    <li>Implemented responsive UI with light/dark theme toggle and interactive weather cards</li>
-                    <li>Built a user account management system with persistent data storage</li>
-                </ul>
-                <div class="project-links">
-                    <a href="https://ansari356.github.io/Weather_App" class="project-link" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                </div>
-            </div>
+        <div class="education-item">
+          <div class="education-details">
+            <h4>Full-Stack Development Diploma</h4>
+            <p class="institution">
+              Information Technology Institute (ITI) • Alexandria
+            </p>
+            <p class="grade">Grade: Excellent</p>
+            <p class="grade">
+              Specialized in: React.js, Django, PostgreSQL, REST APIs
+            </p>
+          </div>
+          <div class="duration">Feb 2025 – May 2025</div>
         </div>
 
-        <!-- Education -->
-        <div class="section">
-            <h2 class="section-title">
-                <i class="fas fa-graduation-cap"></i> Education
-            </h2>
-            
-            <div class="education-item">
-                <div class="education-details">
-                    <h4>Full-Stack Development Diploma</h4>
-                    <p class="institution">Information Technology Institute (ITI) • Alexandria</p>
-                    <p class="grade">Grade: Excellent</p>
-                    <p class="grade">Specialized in: React.js, Django, PostgreSQL, REST APIs</p>
-                </div>
-                <div class="duration">Feb 2025 – May 2025</div>
-            </div>
-
-            <div class="education-item">
-                <div class="education-details">
-                    <h4>Bachelor of Computing and Data Science</h4>
-                    <p class="institution">Alexandria University • Faculty of Computers & Data Science (FCDS)</p>
-                    <p class="grade">GPA: 3.0077/4.0 (Very Good)</p>
-                    <p class="grade">Relevant Coursework: Data Structures, Algorithms, Database Systems, Software Engineering</p>
-                </div>
-                <div class="duration">Class of 2024</div>
-            </div>
+        <div class="education-item">
+          <div class="education-details">
+            <h4>Bachelor of Computing and Data Science</h4>
+            <p class="institution">
+              Alexandria University • Faculty of Computers & Data Science (FCDS)
+            </p>
+            <p class="grade">GPA: 3.0077/4.0 (Very Good)</p>
+            <p class="grade">
+              Relevant Coursework: Data Structures, Algorithms, Database
+              Systems, Software Engineering
+            </p>
+          </div>
+          <div class="duration">Class of 2024</div>
         </div>
+      </div>
 
-        <!-- Certifications -->
-        <div class="section">
-            <h2 class="section-title">
-                <i class="fas fa-certificate"></i> Certifications
-            </h2>
-            <div class="certifications-list">
-                <ul>
-                    <li>
-                        <strong>Microsoft Office Specialist (MOS)</strong> – Microsoft
-                    </li>
-                </ul>
-            </div>
+      <!-- Certifications -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-certificate"></i> Certifications
+        </h2>
+        <div class="certifications-list">
+          <ul>
+            <li>
+              <strong>Microsoft Office Specialist (MOS)</strong> – Microsoft
+            </li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Leadership & Community -->
-        <div class="section">
-            <h2 class="section-title">
-                <i class="fas fa-users"></i> Leadership & Community
-            </h2>
-            <div class="leadership-list">
-                <div class="leadership-item">
-                    <strong>Vice President</strong> – Google Developer Student Club (DSC)
-                </div>
-                <div class="leadership-item">
-                    <strong>Project Manager</strong> – Enactus Organization
-                </div>
-                <div class="leadership-item">
-                    <strong>Founder and Chairman</strong> – Safwa FCDS Team
-                </div>
-                <div class="leadership-item">
-                    <strong>Speaker</strong> – Bibliotheca Alexandrina
-                </div>
-            </div>
+      <!-- Leadership & Community -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-users"></i> Leadership & Community
+        </h2>
+        <div class="leadership-list">
+          <div class="leadership-item">
+            <strong>Vice President</strong> – Google Developer Student Club
+            (DSC)
+          </div>
+          <div class="leadership-item">
+            <strong>Project Manager</strong> – Enactus Organization
+          </div>
+          <div class="leadership-item">
+            <strong>Founder and Chairman</strong> – Safwa FCDS Team
+          </div>
+          <div class="leadership-item">
+            <strong>Speaker</strong> – Bibliotheca Alexandrina
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Scroll to Top Button -->
     <div class="scroll-top" id="scrollTop">
-        <i class="fas fa-chevron-up"></i>
+      <i class="fas fa-chevron-up"></i>
     </div>
 
     <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+      // Download CV functionality
+      document
+        .getElementById("downloadCV")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Create a temporary message
+          const originalText = this.innerHTML;
+          this.innerHTML =
+            '<i class="fas fa-spinner fa-spin"></i> <span>Preparing PDF...</span>';
+
+          // Simulate PDF generation (replace with actual PDF URL)
+          setTimeout(() => {
+            // Replace 'path/to/your/cv.pdf' with the actual path to your PDF file
+            const link = document.createElement("a");
+            link.href = "path/to/your/cv.pdf"; // Update this with your actual PDF URL
+            link.download = "Mohamed_Yousry_Al-Ansari_CV.pdf";
+            link.click();
+
+            // Reset button text
+            this.innerHTML = originalText;
+          }, 1500);
         });
 
-        // Scroll to top functionality
-        const scrollTopBtn = document.getElementById('scrollTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
+      // Smooth scrolling for navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Scroll to top functionality
+      const scrollTopBtn = document.getElementById("scrollTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          scrollTopBtn.classList.add("visible");
+        } else {
+          scrollTopBtn.classList.remove("visible");
+        }
+      });
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Add animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll(".section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(20px)";
+        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(section);
+      });
+
+      // Add hover effects to skill tags
+      document.querySelectorAll(".skill-tag").forEach((tag) => {
+        tag.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-2px)";
+          this.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
         });
 
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        tag.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0)";
+          this.style.boxShadow = "none";
         });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-
-        // Add hover effects to skill tags
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-2px)';
-                this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
-            });
-            
-            tag.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = 'none';
-            });
-        });
+      });
     </script>
-</body>
+  </body>
 </html>
