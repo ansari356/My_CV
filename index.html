@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohamed Yousry Al-Ansari - Software Engineer</title>
+    <title>Mohamed Yousry Al-Ansari - Full-Stack Developer</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
@@ -124,6 +124,17 @@
       .contact-item:hover {
         transform: translateY(-2px);
         color: #fff;
+      }
+
+      .military-status {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-top: 10px;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
       }
 
       .download-cv-btn {
@@ -440,6 +451,33 @@
         background: var(--primary-color);
         transform: translateY(-2px);
       }
+
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: var(--white);
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid var(--white);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .profile-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .profile-img i {
+        font-size: 48px;
+        color: var(--primary-color);
+      }
     </style>
   </head>
   <body>
@@ -448,21 +486,30 @@
       <div class="profile-card">
         <div class="header">
           <div class="profile-img">
-            <i class="fas fa-user"> </i>
+            <img
+              src="/profile_image.jpg"
+              alt="Mohamed Yousry Al-Ansari"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <i class="fas fa-user" style="display: none"></i>
           </div>
+
           <h1 class="name">Mohamed Yousry Al-Ansari</h1>
-          <p class="title">Software Engineer</p>
+          <p class="title">Full-Stack Developer</p>
           <div class="contact-info">
             <a href="tel:+201223513990" class="contact-item">
               <i class="fas fa-phone"></i>
-              <span>+201223513990</span>
-            </a>
-            <a href="mailto:mohamed.alansari356@gmail.com" class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>mohamed.alansari356@gmail.com</span>
+              <span>+20 122 351 3990</span>
             </a>
             <a
-              href="https://linkedin.com/in/alansari356"
+              href="mailto:alansari.mohamedyousry@gmail.com"
+              class="contact-item"
+            >
+              <i class="fas fa-envelope"></i>
+              <span>alansari.mohamedyousry@gmail.com</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/ansari356"
               class="contact-item"
               target="_blank"
             >
@@ -479,9 +526,10 @@
             </a>
             <div class="contact-item">
               <i class="fas fa-map-marker-alt"></i>
-              <span>Cairo & Alexandria, Egypt</span>
+              <span>Alexandria, Egypt (Open to relocation)</span>
             </div>
           </div>
+          <div class="military-status">Military Status: Exempted</div>
           <a
             href="./Mohamed_Yousry_CV.pdf"
             class="download-cv-btn"
@@ -499,15 +547,289 @@
           <i class="fas fa-user-tie"></i> Professional Summary
         </h2>
         <p class="summary-text">
-          Full-Stack Software Engineer with 1+ years of experience in web
-          development using React.js, Node.js, Django, PostgreSQL, and MongoDB.
-          Proven track record in building scalable e-commerce applications and
-          delivering comprehensive training to 150+ students. Expertise in
-          JavaScript, Python, and modern web technologies with strong
-          problem-solving and leadership skills. Seeking a challenging software
-          engineering role in a growth-focused company where I can apply both my
-          technical and soft skills.
+          Full-Stack Developer skilled in React.js, Node.js, Django, PostgreSQL,
+          and MongoDB. Delivered over 100 training sessions in behavioral
+          psychology, communication skills, and technology. Strong background in
+          JavaScript, Python, and modern web technologies, combined with
+          excellent problem-solving, teaching, and leadership abilities.
         </p>
+      </div>
+
+      <!-- Internships -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-graduation-cap"></i> Internships
+        </h2>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Full-Stack Developer (Internship)</h3>
+            <p class="company">
+              Information Technology Institute (ITI) • Alexandria, Egypt —
+              Full-Time
+            </p>
+            <p class="duration">March 2025 – June 2025</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Built full-stack applications using React.js, Django, PostgreSQL,
+              and Odoo
+            </li>
+            <li>
+              Worked with REST APIs and followed Agile development practices
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">CRM Data Analyst (Internship)</h3>
+            <p class="company">Scitecs • Alexandria, Egypt — Full-Time</p>
+            <p class="duration">January 2025 – March 2025</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Trained on CRM systems with a focus on HubSpot, deal tracking, and
+              workflow automation
+            </li>
+            <li>
+              Gained hands-on experience in data analysis using Excel for
+              cleaning, organizing, and visualizing customer data
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Professional Experience -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-briefcase"></i> Professional Experience
+        </h2>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Freelance Full-Stack Developer</h3>
+            <p class="company">Self-Employed • Alexandria, Egypt</p>
+            <p class="duration">June 2023 – Present</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Engineered custom web applications for 5+ clients across various
+              industries
+            </li>
+            <li>
+              Built responsive websites and web applications using JavaScript,
+              Node.js, MongoDB, and modern web technologies
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Online Instructor</h3>
+            <p class="company">Almentor (DECI) • Cairo, Egypt — Remote</p>
+            <p class="duration">June 2024 – Present</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Delivered comprehensive training to 150+ students in web
+              development, Python programming, and artificial intelligence
+            </li>
+            <li>
+              Conducted over 120 interactive, and engaging lectures covering
+              Python, JavaScript, Scratch, and Computer Systems
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Subject Matter Expert (SME)</h3>
+            <p class="company">
+              Armstrong (DECI) • Alexandria, Egypt — Full-Time
+            </p>
+            <p class="duration">June 2024 – December 2024</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Developed web development content for 50,000+ students as part of
+              the "Digital Egypt Cubs" initiative, under the Egyptian Ministry
+              of Communications and Information Technology
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Instructor</h3>
+            <p class="company">
+              Algorithmics Manama • Manama, Bahrain — Remote
+            </p>
+            <p class="duration">February 2024 – December 2024</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Delivered engaging lessons in Python programming and introductory
+              computer science to students aged 9–17
+            </li>
+            <li>
+              Taught various technology-focused courses, including game
+              development, algorithms, and data structures
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-university"></i> Education
+        </h2>
+
+        <div class="education-item">
+          <div class="education-details">
+            <h4>Bachelor of Computing and Data Science</h4>
+            <p class="institution">
+              Alexandria University • Faculty of Computers & Data Science (FCDS)
+            </p>
+            <p class="grade">GPA: 3.0077/4.0 (Very Good)</p>
+          </div>
+          <div class="duration">Class of 2024</div>
+        </div>
+      </div>
+
+      <!-- Key Projects -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-project-diagram"></i> Key Projects
+        </h2>
+
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">
+              E-Commerce Website (Graduation Project)
+            </h3>
+            <p class="tech-stack">
+              Node.js, Express.js, MongoDB, JWT, Stripe API, Cloudinary,
+              Nodemailer
+            </p>
+            <p class="project-date">June 2024</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Developed a full-stack e-commerce platform using Node.js,
+              Express.js, and MongoDB
+            </li>
+            <li>
+              Deployed on Vercel with bcrypt for password hashing and robust
+              error handling
+            </li>
+          </ul>
+          <div class="project-links">
+            <a
+              href="https://github.com/ansari356/ECommerce_Nodejs_Project"
+              class="project-link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Movie & TV Browser Application</h3>
+            <p class="tech-stack">
+              React.js, Redux Toolkit, TMDb API, Sass, Bootstrap, Lottie,
+              Swiper.js
+            </p>
+            <p class="project-date">May 2025</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Built a dynamic movie and TV show browser with Redux Toolkit for
+              state management
+            </li>
+            <li>
+              Integrated TMDb API for real-time movie data, recommendations, and
+              user reviews
+            </li>
+          </ul>
+          <div class="project-links">
+            <a
+              href="https://github.com/ansari356/Movie_App_Reactjs"
+              class="project-link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Weather Application</h3>
+            <p class="tech-stack">
+              HTML5, CSS3, JavaScript, Bootstrap, Weather API
+            </p>
+            <p class="project-date">April 2025</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Created a responsive weather app with real-time global weather
+              data and user authentication
+            </li>
+            <li>Added light/dark theme toggle and interactive weather cards</li>
+          </ul>
+          <div class="project-links">
+            <a
+              href="https://ansari356.github.io/Weather_App"
+              class="project-link"
+              target="_blank"
+            >
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Training -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-chalkboard-teacher"></i> Training
+        </h2>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Backend Development Trainee</h3>
+            <p class="company">Sprints • Alexandria, Egypt</p>
+            <p class="duration">June 2022 – October 2022</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Developed proficiency in MongoDB, Express.js, and Node.js for
+              full-stack web applications
+            </li>
+            <li>
+              Implemented RESTful APIs and optimized database design patterns
+              for scalable backend systems
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-header">
+            <h3 class="job-title">Software Engineering Trainee</h3>
+            <p class="company">Appsoft Co. • Alexandria, Egypt</p>
+            <p class="duration">June 2021 – October 2021</p>
+          </div>
+          <ul class="achievements">
+            <li>
+              Designed and developed a Point of Sale (POS) system for inventory
+              management and customer data
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Skills -->
@@ -523,6 +845,7 @@
               <span class="skill-tag">Java</span>
               <span class="skill-tag">JavaScript</span>
               <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">R</span>
             </div>
           </div>
           <div class="skill-category">
@@ -545,6 +868,7 @@
               <span class="skill-tag">Express.js</span>
               <span class="skill-tag">Django</span>
               <span class="skill-tag">Flask</span>
+              <span class="skill-tag">Odoo</span>
               <span class="skill-tag">REST APIs</span>
               <span class="skill-tag">JWT</span>
             </div>
@@ -569,6 +893,7 @@
               <span class="skill-tag">CI/CD pipelines</span>
               <span class="skill-tag">JIRA</span>
               <span class="skill-tag">Trello</span>
+              <span class="skill-tag">Apache Server</span>
             </div>
           </div>
           <div class="skill-category">
@@ -584,284 +909,6 @@
         </div>
       </div>
 
-      <!-- Professional Experience -->
-      <div class="section">
-        <h2 class="section-title">
-          <i class="fas fa-briefcase"></i> Professional Experience
-        </h2>
-
-        <div class="experience-item">
-          <div class="job-header">
-            <h3 class="job-title">Freelance Software Developer</h3>
-            <p class="company">Self-Employed • Alexandria, Egypt — Remote</p>
-            <p class="duration">June 2023 – Present</p>
-          </div>
-          <ul class="achievements">
-            <li>
-              Engineered custom web applications and e-commerce solutions for
-              10+ clients across various industries
-            </li>
-            <li>
-              Built responsive websites and web applications using React.js,
-              Node.js, MongoDB, and modern web technologies
-            </li>
-            <li>
-              Collaborated with clients to gather requirements, design
-              solutions, and deliver projects within specified timelines
-            </li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="job-header">
-            <h3 class="job-title">Online Instructor</h3>
-            <p class="company">Almentor (DECI) • Cairo, Egypt — Part-Time</p>
-            <p class="duration">June 2024 – December 2024</p>
-          </div>
-          <ul class="achievements">
-            <li>
-              Delivered comprehensive training to 150+ students in web
-              development, Python programming, and artificial intelligence
-            </li>
-            <li>
-              Conducted 120+ interactive and engaging lectures covering Python,
-              JavaScript, Scratch, and Computer Systems
-            </li>
-            <li>
-              Designed curriculum and learning materials, showcasing leadership
-              and adaptability across diverse technical topics
-            </li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="job-header">
-            <h3 class="job-title">Backend Development Trainee</h3>
-            <p class="company">Sprints Training • Alexandria, Egypt</p>
-            <p class="duration">June 2022 – October 2022</p>
-          </div>
-          <ul class="achievements">
-            <li>
-              Developed proficiency in MongoDB, Express.js, and Node.js for
-              full-stack web applications
-            </li>
-            <li>
-              Implemented RESTful APIs and optimized database design patterns
-              for scalable backend systems
-            </li>
-            <li>
-              Utilized Git, Postman, and project management tools including Jira
-              and Trello, collaborating in Agile teams
-            </li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="job-header">
-            <h3 class="job-title">Software Engineering Trainee</h3>
-            <p class="company">Appsoft Co. • Alexandria, Egypt</p>
-            <p class="duration">June 2021 – October 2021</p>
-          </div>
-          <ul class="achievements">
-            <li>
-              Designed and developed a Point of Sale (POS) system for inventory
-              management and customer data
-            </li>
-            <li>
-              Implemented invoice generation and database management features
-              for business operations
-            </li>
-            <li>
-              Enhanced skills in database design, teamwork, and efficient coding
-              practices through mentorship
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Key Projects -->
-      <div class="section">
-        <h2 class="section-title">
-          <i class="fas fa-project-diagram"></i> Key Projects
-        </h2>
-
-        <div class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">E-Commerce Website</h3>
-            <p class="tech-stack">
-              Node.js, Express.js, MongoDB, JWT, Stripe API
-            </p>
-            <p class="project-date">June 2024</p>
-          </div>
-          <ul class="achievements">
-            <li>
-              Developed full-stack e-commerce application with robust backend
-              using Node.js, Express.js, and MongoDB
-            </li>
-            <li>
-              Implemented JWT-based authentication, role-based authorization,
-              and secure payment processing with Stripe
-            </li>
-            <li>
-              Integrated Cloudinary for image management and Nodemailer for
-              automated email notifications
-            </li>
-            <li>
-              Deployed scalable solution on Vercel with data protection using
-              bcrypt and comprehensive error handling
-            </li>
-          </ul>
-          <div class="project-links">
-            <a
-              href="https://github.com/ansari356/ECommerce_Nodejs_Project"
-              class="project-link"
-              target="_blank"
-            >
-              <i class="fab fa-github"></i> View Code
-            </a>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Movie & TV Browser Application</h3>
-            <p class="tech-stack">
-              React.js, Redux Toolkit, TMDb API, Sass, Bootstrap
-            </p>
-            <p class="project-date">May 2025</p>
-          </div>
-          <ul class="achievements">
-            <li>
-              Built a dynamic movie and TV show browsing application with
-              React.js and Redux Toolkit for state management
-            </li>
-            <li>
-              Integrated TMDb API for fetching real-time movie data,
-              recommendations, and user reviews
-            </li>
-            <li>
-              Implemented multilingual support and RTL layout for enhanced user
-              accessibility
-            </li>
-            <li>
-              Enhanced user experience with animated transitions using Lottie
-              and Swiper.js components
-            </li>
-          </ul>
-          <div class="project-links">
-            <a
-              href="https://github.com/ansari356/Movie_App_Reactjs"
-              class="project-link"
-              target="_blank"
-            >
-              <i class="fab fa-github"></i> View Code
-            </a>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Full-Stack Client Management System</h3>
-            <p class="tech-stack">
-              React.js, Node.js, PostgreSQL, Tailwind CSS
-            </p>
-            <p class="project-date">May 2025</p>
-          </div>
-          <ul class="achievements">
-            <li>
-              Developed complete client management system with React.js frontend
-              and Node.js RESTful API backend
-            </li>
-            <li>
-              Connected PostgreSQL database with secure CRUD operations and
-              advanced search functionality
-            </li>
-            <li>
-              Implemented responsive design using Tailwind CSS for optimal user
-              experience across devices
-            </li>
-          </ul>
-          <div class="project-links">
-            <a
-              href="https://github.com/ansari356/Full_Stack_CRUD_App"
-              class="project-link"
-              target="_blank"
-            >
-              <i class="fab fa-github"></i> View Code
-            </a>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <h3 class="project-title">Weather Application</h3>
-            <p class="tech-stack">
-              HTML5, CSS3, JavaScript, Bootstrap, Weather API
-            </p>
-            <p class="project-date">April 2025</p>
-          </div>
-          <ul class="achievements">
-            <li>
-              Created a weather application with user authentication providing
-              real-time weather data worldwide
-            </li>
-            <li>
-              Implemented responsive UI with light/dark theme toggle and
-              interactive weather cards
-            </li>
-            <li>
-              Built a user account management system with persistent data
-              storage
-            </li>
-          </ul>
-          <div class="project-links">
-            <a
-              href="https://ansari356.github.io/Weather_App"
-              class="project-link"
-              target="_blank"
-            >
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Education -->
-      <div class="section">
-        <h2 class="section-title">
-          <i class="fas fa-graduation-cap"></i> Education
-        </h2>
-
-        <div class="education-item">
-          <div class="education-details">
-            <h4>Full-Stack Development Diploma</h4>
-            <p class="institution">
-              Information Technology Institute (ITI) • Alexandria
-            </p>
-            <p class="grade">Grade: Excellent</p>
-            <p class="grade">
-              Specialized in: React.js, Django, PostgreSQL, REST APIs
-            </p>
-          </div>
-          <div class="duration">Feb 2025 – May 2025</div>
-        </div>
-
-        <div class="education-item">
-          <div class="education-details">
-            <h4>Bachelor of Computing and Data Science</h4>
-            <p class="institution">
-              Alexandria University • Faculty of Computers & Data Science (FCDS)
-            </p>
-            <p class="grade">GPA: 3.0077/4.0 (Very Good)</p>
-            <p class="grade">
-              Relevant Coursework: Data Structures, Algorithms, Database
-              Systems, Software Engineering
-            </p>
-          </div>
-          <div class="duration">Class of 2024</div>
-        </div>
-      </div>
-
       <!-- Certifications -->
       <div class="section">
         <h2 class="section-title">
@@ -871,6 +918,19 @@
           <ul>
             <li>
               <strong>Microsoft Office Specialist (MOS)</strong> – Microsoft
+              (2018)
+            </li>
+            <li>
+              <strong>Backend Development Training Certificate</strong> –
+              Sprints (2022)
+            </li>
+            <li>
+              <strong>1st place</strong> – Enactus Alexandria Business
+              Competition (2021)
+            </li>
+            <li>
+              <strong>InnovEgypt Certificate</strong> for the project "Avocat"
+              (legal consultation platform) (2020)
             </li>
           </ul>
         </div>
@@ -888,6 +948,9 @@
           </div>
           <div class="leadership-item">
             <strong>Project Manager</strong> – Enactus Organization
+          </div>
+          <div class="leadership-item">
+            <strong>Head of the Team Committee</strong> – FCDS Student Union
           </div>
           <div class="leadership-item">
             <strong>Founder and Chairman</strong> – Safwa FCDS Team
